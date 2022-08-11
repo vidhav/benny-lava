@@ -32,7 +32,8 @@ jobs:
           flit install --symlink
       - name: Publish
         env:
+          FLIT_INDEX_URL: https://test.pypi.org/legacy/
           FLIT_USERNAME: ${{ secrets.FLIT_USERNAME }}
           FLIT_PASSWORD: ${{ secrets.FLIT_PASSWORD }}
         run: |
-          flit publish --repository testpypi
+          flit publish
