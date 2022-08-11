@@ -12,5 +12,5 @@ jobs:
       - name: Set version
         run: |
           cat ./benny_lava/__init__.py
-          sed -i "s/0.0.0/${GITHUB_REF:11}/" __init__.py
+          sed -i "s/0.0.0/${GITHUB_REF:11}/" ./benny_lava/__init__.py
           cat ./benny_lava/__init__.py
