@@ -1,0 +1,46 @@
+[build-system]
+build-backend = "flit.buildapi"
+requires = [
+    "flit",
+]
+
+[project]
+authors = [
+    {name = "Håvard Vidme", email = "havard.vidme@kartverket.no"},
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dynamic = [
+    "description",
+    "version",
+]
+license = { file = "LICENSE" }
+name = "benny-lava"
+readme = "README.md"
+requires-python = ">=3.6.1"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+]
+test = [
+    "pytest",
+]
+
+[project.urls]
+Home = "https://github.com/vidhav/benny-lava"
+
+[tool.flit.module]
+name = "benny_lava"
+
+[tool.isort]
+profile = "black"
