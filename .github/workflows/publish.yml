@@ -1,0 +1,19 @@
+name: Publish
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v3
+      - name: Set version
+        run: |
+          cat ./benny_lava/__init__.py
+          sed -i 's/0.0.0/${{ steps.meta.outputs.version }}/' ./benny_lava/__init__.py
+          cat ./benny_lava/__init__.py
