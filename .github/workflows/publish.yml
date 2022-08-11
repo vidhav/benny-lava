@@ -12,6 +12,8 @@ jobs:
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v3
+        with:
+          images: ${{ github.repository }}
       - name: Set version
         run: |
           cat ./benny_lava/__init__.py
